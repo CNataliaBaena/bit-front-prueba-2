@@ -1,0 +1,31 @@
+<h2>Departamentos</h2>
+
+<input type="number" [(ngModel)]="newDept.codeDepartment" placeholder="Código" [disabled]="editing">
+<input [(ngModel)]="newDept.nameDepartment" placeholder="Nombre">
+
+<button (click)="save()">
+  {{ editing ? 'Actualizar' : 'Guardar' }}
+</button>
+
+<!-- <button *ngIf="editing" (click)="resetForm()">Cancelar</button> -->
+
+<table>
+  <thead>
+    <th>Nombres</th>
+    <th>Codigos</th>
+  </thead>
+  <tbody>
+    @for (d of departments; track d._id){
+    <tr>
+      <td>
+        {{ d.name }}
+      </td>
+      <td>
+        {{ d.departmentCode }}
+      </td>
+      <button (click)="edit(d)">Editar</button>
+      <button (click)="delete(d.departmentCode)">Eliminar</button>
+    </tr>
+  }
+  </tbody>
+</table>

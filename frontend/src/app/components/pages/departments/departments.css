@@ -1,0 +1,14 @@
+button {
+  margin: 5px;
+  border: solid 2px black;
+  background-color: lightskyblue;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: black;
+  border-radius: 3px;
+}
+
+th, td {
+  background-color: lightgray;
+  border: solid 1px black;
+}
