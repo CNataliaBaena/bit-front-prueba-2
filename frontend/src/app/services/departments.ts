@@ -17,10 +17,10 @@ export class DepartmentService {
   }
 
   update(id: number, dept: any) {
-    return this.http.put("${this.apiUrl}/${id}", dept);
+    return this.http.put(`${this.apiUrl}/${id}`, dept);
   }
 
   delete(id: number) {
-    return this.http.delete("${this.apiUrl}/${id}");
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 };

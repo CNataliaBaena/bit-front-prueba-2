@@ -15,15 +15,21 @@ export class EmployeeService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
+  getByDepartment(departmentCode: number) {
+    return this.http.get<any>(
+      `${this.apiUrl}/departments/${departmentCode}`
+    );
+  }
+
   create(emp: any) {
     return this.http.post(this.apiUrl, emp);
   }
 
   update(id: number, emp: any) {
-    return this.http.put("${this.apiUrl}/${id}", emp);
+    return this.http.put(`${this.apiUrl}/${id}`, emp);
   }
 
   delete(id: number) {
-    return this.http.delete("${this.apiUrl}/${id}");
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

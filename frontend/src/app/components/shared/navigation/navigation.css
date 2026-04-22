@@ -1,4 +1,11 @@
 nav{
-  background:#eee;
+  background-color: lightgray;
   padding:10px;
+  justify-content: center;
+}
+
+nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
 }

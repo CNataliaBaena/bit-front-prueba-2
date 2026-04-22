@@ -8,7 +8,10 @@ button {
   border-radius: 3px;
 }
 
-th, td {
-  background-color: lightgray;
+th {
+  background-color: lightskyblue;
   border: solid 1px black;
+  border-radius: 3px;
+  margin-left: 5px;
+  padding: 5px;
 }

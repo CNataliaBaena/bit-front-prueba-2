@@ -1,13 +1,13 @@
 <h2>Departamentos</h2>
 
-<input type="number" [(ngModel)]="newDept.codeDepartment" placeholder="Código" [disabled]="editing">
-<input [(ngModel)]="newDept.nameDepartment" placeholder="Nombre">
+<input type="number" [(ngModel)]="newDept.departmentCode" placeholder="Código" [disabled]="editing">
+<input [(ngModel)]="newDept.name" placeholder="Nombre">
 
 <button (click)="save()">
   {{ editing ? 'Actualizar' : 'Guardar' }}
 </button>
 
-<!-- <button *ngIf="editing" (click)="resetForm()">Cancelar</button> -->
+<button If="editing" (click)="resetForm()">Refrescar</button>
 
 <table>
   <thead>
@@ -25,7 +25,24 @@
       </td>
       <button (click)="edit(d)">Editar</button>
       <button (click)="delete(d.departmentCode)">Eliminar</button>
+      <button (click)="loadEmployees(d)">Ver empleados</button>
     </tr>
   }
   </tbody>
 </table>
+
+<hr>
+
+<h3 *ngIf="selectedDepartment">
+  Empleados de {{ selectedDepartment.name }}
+</h3>
+
+<ul *ngIf="employees.length > 0; else noData">
+  <li *ngFor="let e of employees">
+    {{ e.name }} {{ e.lastName1 }} {{ e.lastName2 }}
+  </li>
+</ul>
+
+<ng-template #noData>
+  <p>No hay empleados en este departamento</p>
+</ng-template>
